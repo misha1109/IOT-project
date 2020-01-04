@@ -7,7 +7,13 @@ import {GoogleApiService} from '../../services/google-api.service';
   styleUrls: ['./marker-snackbar.component.css']
 })
 export class MarkerSnackbarComponent implements OnInit {
-  currSnackData: object;
+  currSnackData: {
+    coordinates: {
+      lat: string;
+      lng: string;
+    };
+    location: string;
+  };
   lastInited: number;
   showSnack: boolean;
   constructor(private googleApiService: GoogleApiService) {

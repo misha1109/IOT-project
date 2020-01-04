@@ -12,7 +12,13 @@ export class GoogleApiService {
     setPath: any;
   };
   markerBounds: object;
-  snackDataSub = new Subject<object>();
+  snackDataSub = new Subject<{
+    coordinates: {
+      lat: string;
+      lng: string;
+    };
+    location: string;
+  }>();
   constructor() { }
   initMap() {
     const tempPoint = {lat: -25.344, lng: 131.036};

@@ -11,7 +11,13 @@ export class CableToolbarComponent implements OnInit {
   @Input() geoData: object;
   chosenCable: {
     index: number;
-    cable: object;
+    cable: {
+      name: string;
+      length: string;
+      owners: string;
+      url: string;
+      ready: string
+    };
   }
   cables = [];
   constructor( private googleApiService: GoogleApiService) { }
