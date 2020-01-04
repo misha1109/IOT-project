@@ -58,6 +58,7 @@ export class CableToolbarComponent implements OnInit {
   }
   removeCables() {
     if ( this.chosenCable && this.chosenCable.cable ) {
+      // @ts-ignore
       this.googleApiService.removeAllMarkers(this.chosenCable.cable.markers);
     }
   }
