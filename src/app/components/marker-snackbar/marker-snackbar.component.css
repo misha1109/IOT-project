@@ -1,0 +1,47 @@
+.snack-wrapper {
+  position: fixed;
+  text-align: center;
+  width: max-content;
+  top: 0;
+  left: 60vw;
+  right: 40vw;
+  z-index: 1000;
+  background-color: #7E57C2;
+  padding: 2em;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 2px solid black;
+}
+
+.snack-wrapper div{
+  margin:0.5em 0;
+  font-size: larger;
+}
+
+.snack-show {
+  animation: animeSnackShow 1s forwards ease-in-out;
+}
+.snack-hide {
+  animation: animeSnackHide 1s forwards ease-in-out;
+}
+
+@keyframes animeSnackShow {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes  animeSnackHide{
+  0%{
+    transform: translateY(0);
+  }
+  99%{
+    transform: translateY(-100%);
+  }
+  100%{
+    display: none;
+  }
+}

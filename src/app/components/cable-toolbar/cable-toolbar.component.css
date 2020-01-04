@@ -1,0 +1,66 @@
+.cables-toolbar-wrapper {
+  width: 25vw;
+  border: 2px solid lightgray;
+  padding: 1em;
+  background-color: #E3F2FD;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+}
+.cable-wrapper {
+  margin: calc( 1em + 5px ) 0;
+  padding: 10px 5px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
+  font-size: larger;
+}
+.cable-wrapper:hover {
+  cursor: pointer;
+  animation: animeCableWrapper 0.3s forwards ease-in-out;
+}
+.cable-title {
+  text-decoration: underline solid;
+}
+.chosen-cable {
+  background-color: #BBDEFB;
+  transform: scale(1.05);
+}
+.cable-data {
+  margin: 2em 0;
+  font-size: large;
+  animation: animeCableData 0.3s forwards ease-in-out;
+}
+.cable-item {
+  color: chocolate;
+  margin-bottom: 6px;
+}
+.cable-toolbar-title {
+  font-size: xx-large;
+}
+
+@keyframes animeCableWrapper {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+    background-color: #BBDEFB;
+  }
+}
+
+@keyframes animeCableData {
+  0% {
+    opacity: 0;
+    height: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+    transform: translateY(0);
+  }
+}

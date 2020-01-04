@@ -1,0 +1,19 @@
+.main-wrapper {
+  position: fixed;
+  left: 0 ;
+  width: 30vw;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #7986CB;
+  border: solid 2px black;
+}
+.content-wrapper {
+  display: grid;
+  justify-content: center;
+  grid-row-gap: 10px;
+  text-align: center;
+  margin: 1em;
+}
+.heading {
+  font-size: 30px;
+}
