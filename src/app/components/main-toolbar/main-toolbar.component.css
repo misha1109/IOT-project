@@ -12,9 +12,10 @@
   justify-content: center;
   grid-row-gap: 10px;
   text-align: center;
-  margin: 1em;
+  margin: 2em 1em 1em;
 }
 .heading {
+  margin: 1em 0;
   font-family: serif;
   font-size: larger;
 }
