@@ -15,5 +15,6 @@
   margin: 1em;
 }
 .heading {
-  font-size: 30px;
+  font-family: serif;
+  font-size: larger;
 }
