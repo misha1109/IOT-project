@@ -1,3 +1,66 @@
 .app-wrapper{
   overflow: hidden;
 }
+.loader-wrapper {
+  left:0;
+  right: 0;
+  margin: 200px auto auto;
+}
+.bcg-img {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0.5;
+}
+.title-wrapper {
+  z-index: 1;
+  font-family: 'Heebo', sans-serif;
+  text-align: center;
+  margin-top: 10vh;
+}
+.app-title {
+  font-size: 45px;
+  font-weight: bold;
+}
+.app-sub-title {
+  margin-top: 10px;
+  font-size: 35px;
+}
+.ready-button {
+  width: 10vw;
+  height: 10vh;
+  font-size: 30px;
+  position: fixed;
+  left:0;
+  right: 0;
+  top: 45vh;
+  margin: auto auto;
+  animation: readyBtnAnime 0.3s forwards ease-in-out;
+  background: #FF7043;
+}
+.ready-button:hover {
+  background: #69F0AE;
+}
+.main-wrapper {
+  animation: mainWrappAnime 2s forwards ease-in-out;
+}
+
+@keyframes readyBtnAnime {
+  0%{
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes mainWrappAnime {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
