@@ -14,10 +14,12 @@ export class GoogleMapComponent implements OnInit, AfterViewChecked {
   }
   ngAfterViewChecked() {
     if ( document.getElementById('map') ) {
-      if (!this.mapInited) {
-        this.mapInited = true;
-        this.googleApi.initMap();
-      }
+      setTimeout( () => {
+        if (!this.mapInited) {
+          this.mapInited = true;
+          this.googleApi.initMap();
+        }
+      }, 1000);
     }
 
   }

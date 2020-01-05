@@ -5,6 +5,20 @@ export const subMarineCables = [
     "cable_id": 1010,
     "landing_points": [
       {
+        "landing_point_id": 5751,
+        "id": "morro-bay-ca-united-states",
+        "name": "Morro Bay, CA, United States",
+        "latlon": "35.366680,-120.847202",
+        "url": "#/landing-point/morro-bay-ca-united-states"
+      },
+      {
+        "landing_point_id": 5760,
+        "id": "makaha-hi-united-states",
+        "name": "Makaha, HI, United States",
+        "latlon": "21.463439,-158.220649",
+        "url": "#/landing-point/makaha-hi-united-states"
+      },
+      {
         "landing_point_id": 5883,
         "id": "shima-japan",
         "name": "Shima, Japan",
@@ -24,14 +38,7 @@ export const subMarineCables = [
       "name": "Kitaibaraki, Japan",
       "latlon": "36.801787,140.750940",
       "url": "#/landing-point/kitaibaraki-japan"
-    },
-      {
-      "landing_point_id": 5760,
-      "id": "makaha-hi-united-states",
-      "name": "Makaha, HI, United States",
-      "latlon": "21.463439,-158.220649",
-      "url": "#/landing-point/makaha-hi-united-states"
-    }, {
+    },{
       "landing_point_id": 3687,
       "id": "manchester-ca-united-states",
       "name": "Manchester, CA, United States",

@@ -21,10 +21,10 @@ export class GoogleApiService {
   }>();
   constructor() { }
   initMap() {
-    const tempPoint = {lat: -25.344, lng: 131.036};
+    const tempPoint = {lat: 36.7783, lng: 119.4179};
     // @ts-ignore
     this.map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: tempPoint}
+      document.getElementById('map'), {zoom: 3, center: tempPoint}
     );
     // @ts-ignore
     this.polyline = new google.maps.Polyline({
