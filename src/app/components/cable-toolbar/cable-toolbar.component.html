@@ -1,23 +1,25 @@
-<div class="cables-toolbar-wrapper">
-  <div class="cable-toolbar-title">{{ title }}</div>
-  <div *ngFor="let cable of cables; let i=index" class="cable-wrapper"
-    [ngClass]="chosenCable && chosenCable.index === i ? 'chosen-cable': ''"
-    (click)="showCable(i)"
-  >
+<div class="cables-toolbar-wrapper" [ngClass]=" type === 'submarine' ? 'sub-bcg' : 'ixp-bcg' ">
+  <div class="cable-toolbar-title"  (click)="chooseTool()">{{ title }}</div>
+  <div  *ngIf="showTool">
+    <button mat-raised-button	 *ngFor="let cable of cables; let i=index" class="cable-wrapper"
+            [ngClass]="chosenCable && chosenCable.index === i ? 'chosen-cable': ''"
+            (click)="showCable(i)"
+    >
       <div class="cable-title">
-      {{ cable.name }}
-    </div>
-    <div class="cable-data" *ngIf="chosenCable && chosenCable.index === i">
-      <p>Name:</p>
-      <p class="cable-item">{{ chosenCable.cable.name }}</p>
-      <p>Ready for service:</p>
-      <p class="cable-item">{{ chosenCable.cable.ready }}</p>
-      <p>Length: </p>
-      <p class="cable-item">{{ chosenCable.cable.length }}</p>
-<!--      <p *ngIf="chosenCable.cable.url">Home page: </p>-->
-<!--      <p *ngIf="chosenCable.cable.url" class="cable-item">{{ chosenCable.cable.url }}</p>-->
-      <p>Owners: </p>
-      <p class="cable-item">{{ chosenCable.cable.owners }}</p>
-    </div>
+        {{ cable.name }}
+      </div>
+      <div class="cable-data" *ngIf="chosenCable && chosenCable.index === i">
+        <p>Name:</p>
+        <p class="cable-item">{{ chosenCable.cable.name }}</p>
+        <p>Ready for service:</p>
+        <p class="cable-item">{{ chosenCable.cable.ready }}</p>
+        <p>Length: </p>
+        <p class="cable-item">{{ chosenCable.cable.length }}</p>
+        <!--      <p *ngIf="chosenCable.cable.url">Home page: </p>-->
+        <!--      <p *ngIf="chosenCable.cable.url" class="cable-item">{{ chosenCable.cable.url }}</p>-->
+        <p>Owners: </p>
+        <p class="cable-item">{{ chosenCable.cable.owners }}</p>
+      </div>
+    </button>
   </div>
 </div>

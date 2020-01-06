@@ -2,9 +2,10 @@
   overflow: hidden;
 }
 .loader-wrapper {
+  position: fixed;
   left:0;
   right: 0;
-  margin: 200px auto auto;
+  margin: calc( 50vh - 200px ) auto auto;
 }
 .bcg-img {
   z-index: -1;
@@ -16,7 +17,6 @@
 }
 .title-wrapper {
   z-index: 1;
-  font-family: 'Heebo', sans-serif;
   text-align: center;
   margin-top: 10vh;
 }
@@ -29,7 +29,7 @@
   font-size: 35px;
 }
 .ready-button {
-  width: 10vw;
+  width: fit-content;
   height: 10vh;
   font-size: 30px;
   position: fixed;

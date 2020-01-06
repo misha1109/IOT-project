@@ -1,7 +1,7 @@
 .gMap{
   position: fixed !important;
-  left: 30vw !important;
+  left: 40vw !important;
   top: 0;
   height: 100vh !important;
-  width: 70vw !important;
+  width: 60vw !important;
 }

@@ -9,6 +9,7 @@ import {GoogleApiService} from '../../services/google-api.service';
 export class CableToolbarComponent implements OnInit {
   @Input() title: string;
   @Input() geoData: object;
+  @Input() type;
   chosenCable: {
     index: number;
     cable: {
@@ -18,12 +19,23 @@ export class CableToolbarComponent implements OnInit {
       url: string;
       ready: string
     };
-  }
+  };
+  showTool: boolean;
+  typeStyling: {
+    background: string;
+  };
   cables = [];
   constructor( private googleApiService: GoogleApiService) { }
 
   ngOnInit() {
     this.cables = subMarineCables;
+    this.generateType();
+  }
+  generateType() {
+    this.typeStyling = {
+      background: this.type === 'submarine' ? 'black'
+        : '',
+    };
   }
   showCable(index) {
     this.googleApiService.removeLine();
@@ -67,5 +79,8 @@ export class CableToolbarComponent implements OnInit {
       // @ts-ignore
       this.googleApiService.removeAllMarkers(this.chosenCable.cable.markers);
     }
+  }
+  chooseTool() {
+    this.showTool = !this.showTool;
   }
 }

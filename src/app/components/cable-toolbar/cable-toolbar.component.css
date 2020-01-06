@@ -2,14 +2,20 @@
   margin: 0 1em;
   border: 2px solid lightgray;
   padding: 1em;
-  background-color: #E3F2FD;
+  /*background-color: #E3F2FD;*/
   border-radius: 10px;
   -webkit-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
   box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
 }
+.sub-bcg {
+  background: url("../../../assets/submarine-cable.jpeg");
+}
+.ixp-bcg {
+  background: url("../../../assets/ixps.jpg");
+}
 .cable-wrapper {
-  margin: calc( 1em + 5px ) 0;
+  margin: 0.5em 0;
   padding: 10px;
   border: 1px solid lightgray;
   border-radius: 10px;
@@ -17,6 +23,8 @@
   -moz-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
   box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
   font-size: larger;
+  white-space: unset !important;
+  background: rgba(255,255,255,0.8);
 }
 .cable-wrapper:hover {
   cursor: pointer;
@@ -30,18 +38,22 @@
   transform: scale(1.03);
 }
 .cable-data {
-  margin: 2em 0;
+  margin: 1em 0;
   /*font-size: large;*/
   animation: animeCableData 0.3s forwards ease-in-out;
 
 }
 .cable-item {
   color: darkblue;
-  margin: 3px 0 6px;
+  margin: 2px 0 3px;
 }
 .cable-toolbar-title {
   font-size: 24px;
-  font-family: monospace;
+  color: black;
+  font-weight: bolder;
+}
+.cable-toolbar-title:hover {
+  cursor: pointer;
 }
 
 @keyframes animeCableWrapper {

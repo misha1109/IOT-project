@@ -1,9 +1,11 @@
 <div class="main-wrapper">
   <div class="content-wrapper">
-    <div class="heading">
+    <h1 class="heading">
       CALIFORNIA TELECOMMUNICATIONS CABLES
-    </div>
-    <app-cable-toolbar [title]="'Submarine cables'"></app-cable-toolbar>
+    </h1>
+    <app-cable-toolbar [type]="'submarine'" [title]="'Submarine cables'">
+    </app-cable-toolbar>
+    <app-cable-toolbar [type]="'ixp'" [title]="'IXPs and data-enters'">
+    </app-cable-toolbar>
   </div>
-
 </div>
