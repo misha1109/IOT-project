@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { subMarineCables } from '../../geoDATA/submarineCables';
 import {GoogleApiService} from '../../services/google-api.service';
+import {ActiveToolService} from '../../services/active-tool.service';
 @Component({
   selector: 'app-cable-toolbar',
   templateUrl: './cable-toolbar.component.html',
@@ -17,25 +18,30 @@ export class CableToolbarComponent implements OnInit {
       length: string;
       owners: string;
       url: string;
-      ready: string
+      ready: string,
+      location: string
     };
   };
   showTool: boolean;
-  typeStyling: {
-    background: string;
-  };
   cables = [];
-  constructor( private googleApiService: GoogleApiService) { }
+  constructor( private googleApiService: GoogleApiService, private activeToolService: ActiveToolService) {
+    this.activeToolService.getActiveToolSub().subscribe( tool => {
+      if ( this.type === tool ) {
+        this.showTool = true;
+      }  else {
+        this.showTool = false;
+        this.removeCables();
+        if ( this.chosenCable && this.chosenCable.cable ) {
+          this.googleApiService.removeAllMarkers( this.chosenCable.cable.markers )
+        }
+        this.googleApiService.removeLine();
+        this.chosenCable = null;
+      }
+    });
+  }
 
   ngOnInit() {
-    this.cables = subMarineCables;
-    this.generateType();
-  }
-  generateType() {
-    this.typeStyling = {
-      background: this.type === 'submarine' ? 'black'
-        : '',
-    };
+    this.cables = subMarineCables[0][this.type];
   }
   showCable(index) {
     this.googleApiService.removeLine();
@@ -61,13 +67,15 @@ export class CableToolbarComponent implements OnInit {
         length: this.cables[index].length,
         owners: this.cables[index].owners,
         url: this.cables[index].url,
-        ready: this.cables[index].rfs
+        ready: this.cables[index].rfs,
+        location: this.cables[index].location
       }
       cable.landingPoints.forEach( lp => {
-        const marker = this.googleApiService.addMarker( lp.coordinates, lp );
+        const marker = this.googleApiService.addMarker( lp.coordinates, lp, this.type );
         cable.markers.push(marker);
       })
-      this.googleApiService.drayLine( cable.markers );
+      const type = this.type === 'submarine' ? true : false;
+      this.googleApiService.drayLine( cable.markers, type );
       this.chosenCable = {
         index,
         cable
@@ -82,5 +90,17 @@ export class CableToolbarComponent implements OnInit {
   }
   chooseTool() {
     this.showTool = !this.showTool;
+    if ( !this.showTool ) {
+      this.closeTool();
+    }
+    this.activeToolService.setActiveTool( this.type );
+  }
+  closeTool() {
+    this.showTool = !this.showTool;
+    if ( this.chosenCable && this.chosenCable.cable ) {
+      this.googleApiService.removeAllMarkers( this.chosenCable.cable.markers )
+    }
+    this.chosenCable = null;
+    this.activeToolService.setActiveTool('');
   }
 }

@@ -6,7 +6,7 @@ import { MainToolbarComponent } from './components/main-toolbar/main-toolbar.com
 import { CableToolbarComponent } from './components/cable-toolbar/cable-toolbar.component';
 import { MarkerSnackbarComponent } from './components/marker-snackbar/marker-snackbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatProgressBarModule, MatProgressSpinnerModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import {MatButtonModule, MatProgressBarModule, MatProgressSpinnerModule} from '@
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

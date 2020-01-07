@@ -1,5 +1,6 @@
-<div class="cables-toolbar-wrapper" [ngClass]=" type === 'submarine' ? 'sub-bcg' : 'ixp-bcg' ">
-  <div class="cable-toolbar-title"  (click)="chooseTool()">{{ title }}</div>
+<mat-card class="cables-toolbar-wrapper" [ngClass]=" type === 'submarine' ? 'sub-bcg' : 'ixp-bcg' ">
+  <div *ngIf="showTool" class="close"  (click)="closeTool()">X</div>
+  <div *ngIf="!showTool" class="cable-toolbar-title"  (click)="chooseTool()">{{ title }}</div>
   <div  *ngIf="showTool">
     <button mat-raised-button	 *ngFor="let cable of cables; let i=index" class="cable-wrapper"
             [ngClass]="chosenCable && chosenCable.index === i ? 'chosen-cable': ''"
@@ -9,17 +10,20 @@
         {{ cable.name }}
       </div>
       <div class="cable-data" *ngIf="chosenCable && chosenCable.index === i">
-        <p>Name:</p>
-        <p class="cable-item">{{ chosenCable.cable.name }}</p>
-        <p>Ready for service:</p>
-        <p class="cable-item">{{ chosenCable.cable.ready }}</p>
-        <p>Length: </p>
-        <p class="cable-item">{{ chosenCable.cable.length }}</p>
-        <!--      <p *ngIf="chosenCable.cable.url">Home page: </p>-->
-        <!--      <p *ngIf="chosenCable.cable.url" class="cable-item">{{ chosenCable.cable.url }}</p>-->
-        <p>Owners: </p>
-        <p class="cable-item">{{ chosenCable.cable.owners }}</p>
+        <div *ngIf="type === 'ixp' || type === 'dc'">
+          <p >Locations:</p>
+          <div *ngFor="let loc of cables[0].landing_points" g>
+            <p >{{ loc.name }}</p>
+          </div>
+        </div>
+        <p ></p>
+        <p *ngIf="type === 'submarine'">Ready for service:</p>
+        <p *ngIf="type === 'submarine'" class="cable-item">{{ chosenCable.cable.ready }}</p>
+        <p *ngIf="type === 'submarine'">Length: </p>
+        <p *ngIf="type === 'submarine'" class="cable-item">{{ chosenCable.cable.length }}</p>
+        <p *ngIf="type === 'submarine'">Owners: </p>
+        <p *ngIf="type === 'submarine'" class="cable-item">{{ chosenCable.cable.owners }}</p>
       </div>
     </button>
   </div>
-</div>
+</mat-card>

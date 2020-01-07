@@ -1,5 +1,5 @@
 .cables-toolbar-wrapper {
-  margin: 0 1em;
+  margin: 1em;
   border: 2px solid lightgray;
   padding: 1em;
   /*background-color: #E3F2FD;*/
@@ -7,24 +7,33 @@
   -webkit-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
   box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.75);
+  width: calc( 33vw - 6em );
 }
 .sub-bcg {
-  background: url("../../../assets/submarine-cable.jpeg");
+  background: url("../../../assets/submarine-cable.jpeg") center center no-repeat;
+  background-color: #E3F2FD;
 }
 .ixp-bcg {
-  background: url("../../../assets/ixps.jpg");
+  background: url("../../../assets/ixps.jpg") center center no-repeat;
+  background-color: #E3F2FD;
+}
+.close {
+  font-size: 35px;
+  color: #455A64;
+  cursor: pointer;
 }
 .cable-wrapper {
   margin: 0.5em 0;
   padding: 10px;
   border: 1px solid lightgray;
   border-radius: 10px;
-  -webkit-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
-  box-shadow: 4px 4px 5px -1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.75);
+  box-shadow: 6px 6px 5px -1px rgba(0,0,0,0.75);
   font-size: larger;
   white-space: unset !important;
   background: rgba(255,255,255,0.8);
+  width: calc( 33vw - 10em );
 }
 .cable-wrapper:hover {
   cursor: pointer;
@@ -49,8 +58,14 @@
 }
 .cable-toolbar-title {
   font-size: 24px;
-  color: black;
+  color: white;
+  background: lightsteelblue;
   font-weight: bolder;
+  width: fit-content;
+  margin: auto;
+  border: 1px solid black;
+  padding: 0.2em;
+  border-radius: 6px;
 }
 .cable-toolbar-title:hover {
   cursor: pointer;

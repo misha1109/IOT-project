@@ -3,9 +3,14 @@
     <h1 class="heading">
       CALIFORNIA TELECOMMUNICATIONS CABLES
     </h1>
-    <app-cable-toolbar [type]="'submarine'" [title]="'Submarine cables'">
-    </app-cable-toolbar>
-    <app-cable-toolbar [type]="'ixp'" [title]="'IXPs and data-enters'">
-    </app-cable-toolbar>
+    <div class="toolbar-grid">
+      <app-cable-toolbar  [type]="'submarine'" [title]="'Submarine cables'">
+      </app-cable-toolbar>
+      <app-cable-toolbar [type]="'ixp'" [title]="'IXPs'">
+      </app-cable-toolbar>
+      <app-cable-toolbar [type]="'dc'" [title]="'Data centers'">
+      </app-cable-toolbar>
+    </div>
+
   </div>
 </div>

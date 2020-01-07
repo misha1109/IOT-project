@@ -35,11 +35,17 @@ export class GoogleApiService {
     // @ts-ignore
     this.markerBounds = new google.maps.LatLngBounds();
   }
-  addMarker( position, markerData ) {
+  addMarker( position, markerData, markerType ) {
     // @ts-ignore
-    const marker = new google.maps.Marker({position, map: this.map});
+    const icon = {
+      submarine: 'assets/submarine.svg',
+      ixp: 'assets/ixp-icon.svg',
+      dc: 'assets/dc.svg'
+    }[markerType];
+    // @ts-ignore
+    const marker = new google.maps.Marker(
+      {position, map: this.map, icon});
     marker.addListener('click', () => {
-      console.log(markerData);
       this.snackDataSub.next( {
         coordinates: position,
         location: markerData.lpName
@@ -58,8 +64,13 @@ export class GoogleApiService {
     // @ts-ignore
     this.markerBounds = new google.maps.LatLngBounds();
   }
-  drayLine( markers ) {
-    const path = markers.map( marker => marker.getPosition() )
+  drayLine( markers, submarine = false ) {
+    let path;
+    if ( submarine ) {
+      path = markers.map( marker => marker.getPosition() )
+    } else {
+      path = this.drawNet( markers );
+    }
     this.polyline.setMap(this.map);
     this.polyline.setPath(path);
     // @ts-ignore
@@ -67,6 +78,28 @@ export class GoogleApiService {
     // @ts-ignore
     setTimeout( () => this.map.fitBounds( this.markerBounds ), 1000);
 
+  }
+  drawNet( markers ) {
+    const path = [];
+    // tslint:disable-next-line:prefer-for-of
+    for ( let i = 0; i < markers.length; i++ ) {
+      for ( let j = 0; j < markers.length; j++ ) {
+        if ( i !== j ) {
+          path.push( markers[j].getPosition() );
+          this.markers = this.rotate( markers );
+        }
+        path.push( markers[0].getPosition() );
+      }
+    }
+    return path;
+  }
+  rotate( markers ) {
+    for ( let i = 0; i < markers.length - 1; i++) {
+      const temp = [ markers[i], markers[i + 1] ];
+      markers[i] = temp[1];
+      markers[i + 1] = temp[0];
+    }
+    return markers;
   }
   removeLine() {
     this.polyline.setMap(null);

@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
       height: window.innerHeight,
       width: window.innerWidth,
     };
-    console.log(this.screenSize);
   }
   readyClick() {
     this.ready = true;
