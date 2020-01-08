@@ -14,7 +14,11 @@
   background-color: #E3F2FD;
 }
 .ixp-bcg {
-  background: url("../../../assets/ixps.jpg") center center no-repeat;
+  background: url("../../../assets/ixp.jpg") center center no-repeat;
+  background-color: #E3F2FD;
+}
+.dc-bcg {
+  background: url("../../../assets/dc.jpg") center center no-repeat;
   background-color: #E3F2FD;
 }
 .close {
@@ -59,7 +63,7 @@
 .cable-toolbar-title {
   font-size: 24px;
   color: white;
-  background: rgba(187,222,251,0.5);
+  background: rgba(187,222,251,0.95);
   font-weight: bolder;
   width: fit-content;
   margin: auto;

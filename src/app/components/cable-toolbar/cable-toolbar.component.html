@@ -1,4 +1,4 @@
-<mat-card class="cables-toolbar-wrapper" [ngClass]=" type === 'submarine' ? 'sub-bcg' : 'ixp-bcg' ">
+<mat-card class="cables-toolbar-wrapper" [ngClass]=" type === 'submarine' ? 'sub-bcg' : type === 'ixp' ? 'ixp-bcg' : 'dc-bcg'  ">
   <div *ngIf="showTool" class="close"  (click)="closeTool()">X</div>
   <div *ngIf="!showTool" class="cable-toolbar-title"  (click)="chooseTool()">{{ title }}</div>
   <div  *ngIf="showTool">
