@@ -25,8 +25,9 @@
   font-weight: bold;
 }
 .app-sub-title {
-  margin-top: 10px;
-  font-size: 35px;
+  margin-top: 20px;
+  font-size: 25px;
+  color: red;
 }
 .ready-button {
   width: fit-content;

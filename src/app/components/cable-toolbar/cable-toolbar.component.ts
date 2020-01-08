@@ -14,6 +14,7 @@ export class CableToolbarComponent implements OnInit {
   chosenCable: {
     index: number;
     cable: {
+      markers: any;
       name: string;
       length: string;
       owners: string;

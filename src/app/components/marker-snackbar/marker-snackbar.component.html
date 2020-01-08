@@ -1,7 +1,7 @@
-<div *ngIf="currSnackData" class="snack-wrapper" [ngClass]="showSnack ? 'snack-show' : 'snack-hide'">
-  <div>Location:</div>
-  <p>{{ currSnackData?.location }}</p>
-  <div>Coordinates:</div>
+<div *ngIf="showSnack" class="snack-wrapper" [ngClass]="showSnack ? 'snack-show' : 'snack-hide'">
+  <div class="title">Location:</div>
+  <p style="margin-bottom: 5px">{{ currSnackData?.location }}</p>
+  <div class="title">Coordinates:</div>
   <p>Latitude: {{ currSnackData?.coordinates.lat }}</p>
   <p>Longitude: {{ currSnackData?.coordinates.lng }}</p>
 </div>

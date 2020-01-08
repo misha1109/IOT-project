@@ -13,7 +13,7 @@
         <div *ngIf="type === 'ixp' || type === 'dc'">
           <p >Locations:</p>
           <div *ngFor="let loc of cables[0].landing_points" g>
-            <p >{{ loc.name }}</p>
+            <p class="locations">{{ loc.name }}</p>
           </div>
         </div>
         <p ></p>

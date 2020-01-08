@@ -3,9 +3,9 @@
   text-align: center;
   width: max-content;
   top: 0;
-  left: 67vw;
-  right: 33vw;
-  width: fit-content;
+  left: 60vw;
+  right: 26vw;
+  width: 14vw;
   z-index: 1000;
   background-color: rgba(126,87,194,0.9);
   padding: 1em;
@@ -14,10 +14,17 @@
   border-left: 1px solid white;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+}
+
+.title{
+  color: white;
 }
 
 .snack-wrapper div{
-  margin-bottom: 0.5em;
+  margin-bottom: 10px;
   font-size: larger;
 }
 

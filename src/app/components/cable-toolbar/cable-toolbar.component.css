@@ -33,7 +33,7 @@
   font-size: larger;
   white-space: unset !important;
   background: rgba(255,255,255,0.8);
-  width: calc( 33vw - 10em );
+  width: calc( 33vw - 6em );
 }
 .cable-wrapper:hover {
   cursor: pointer;
@@ -59,13 +59,16 @@
 .cable-toolbar-title {
   font-size: 24px;
   color: white;
-  background: lightsteelblue;
+  background: rgba(187,222,251,0.5);
   font-weight: bolder;
   width: fit-content;
   margin: auto;
   border: 1px solid black;
   padding: 0.2em;
   border-radius: 6px;
+}
+.locations {
+  color: white;
 }
 .cable-toolbar-title:hover {
   cursor: pointer;

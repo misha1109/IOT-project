@@ -1,16 +1,16 @@
 <div class="app-wrapper">
-<!--  <div *ngIf="!ready" >-->
-<!--    <img class="bcg-img" src="../assets/earth-globe-on-white.jpg"/>-->
-<!--    <div class="title-wrapper">-->
-<!--      <h1 class="app-title">Welcome to the California telecommunications terminal</h1>-->
-<!--      <h2 class="app-sub-title">Please wait while the application is loading</h2>-->
-<!--      <button *ngIf="!loading" (click)="readyClick()" class="ready-button" mat-raised-button	>I'm Ready!</button>-->
-<!--      <mat-spinner *ngIf="loading" class="loader-wrapper" [diameter]="200"-->
-<!--                   [color]="'accent'">-->
-<!--      </mat-spinner>-->
-<!--    </div>-->
-<!--  </div>-->
-  <div *ngIf="true" class="main-wrapper" >
+  <div *ngIf="!ready" >
+    <img class="bcg-img" src="../assets/earth-globe-on-white.jpg"/>
+    <div class="title-wrapper">
+      <h1 class="app-title">Welcome to the California telecommunications terminal</h1>
+      <h2 class="app-sub-title" *ngIf="loading">Please wait while the application is loading</h2>
+      <button *ngIf="!loading" (click)="readyClick()" class="ready-button" mat-raised-button	>I'm Ready!</button>
+      <mat-spinner *ngIf="loading" class="loader-wrapper" [diameter]="200"
+                   [color]="'accent'">
+      </mat-spinner>
+    </div>
+  </div>
+  <div *ngIf="ready" class="main-wrapper" >
     <app-marker-snackbar></app-marker-snackbar>
     <app-google-map></app-google-map>
     <app-main-toolbar></app-main-toolbar>
